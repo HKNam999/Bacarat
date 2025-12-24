@@ -1,0 +1,4 @@
+.model-group .group-btn {
+    display: flex;
+    justify-content: space-evenly;
+}
