@@ -683,9 +683,10 @@ document.addEventListener('DOMContentLoaded', function() {
       const gameUrl = this.getAttribute('href');
       let timerInterval;
       
+      let countdownValue = 4000;
       Swal.fire({
         title: 'Đang tải dữ liệu trò chơi',
-        html: 'Load <b>4000</b> Data.',
+        html: 'Load <b id="countdown">4000</b> Data.',
         timer: 4000,
         timerProgressBar: true,
         showConfirmButton: false,
@@ -694,12 +695,10 @@ document.addEventListener('DOMContentLoaded', function() {
         didOpen: () => {
           Swal.showLoading();
           timerInterval = setInterval(() => {
-            const remaining = Swal.getTimerLeft();
-            const content = Swal.getContent();
-            if (content && remaining) {
-              const b = content.querySelector('b');
-              if (b) b.textContent = remaining;
-            }
+            countdownValue -= 50;
+            if (countdownValue < 0) countdownValue = 0;
+            const countdownElement = document.getElementById('countdown');
+            if (countdownElement) countdownElement.textContent = countdownValue;
           }, 50);
         },
         onClose: () => clearInterval(timerInterval)
