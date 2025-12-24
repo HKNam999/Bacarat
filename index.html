@@ -694,12 +694,13 @@ document.addEventListener('DOMContentLoaded', function() {
         didOpen: () => {
           Swal.showLoading();
           timerInterval = setInterval(() => {
+            const remaining = Swal.getTimerLeft();
             const content = Swal.getContent();
-            if (content) {
+            if (content && remaining) {
               const b = content.querySelector('b');
-              if (b) b.textContent = Swal.getTimerLeft();
+              if (b) b.textContent = remaining;
             }
-          }, 100);
+          }, 50);
         },
         onClose: () => clearInterval(timerInterval)
       }).then(result => {
