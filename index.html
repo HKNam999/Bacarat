@@ -685,13 +685,13 @@ document.addEventListener('DOMContentLoaded', function() {
       
       Swal.fire({
         title: 'Đang tải dữ liệu trò chơi',
-        html: 'Load <b></b> Data.',
+        html: 'Load <b>4000</b> Data.',
         timer: 4000,
         timerProgressBar: true,
         showConfirmButton: false,
         allowOutsideClick: false,
         allowEscapeKey: false,
-        onBeforeOpen: () => {
+        didOpen: () => {
           Swal.showLoading();
           timerInterval = setInterval(() => {
             const content = Swal.getContent();
@@ -705,7 +705,15 @@ document.addEventListener('DOMContentLoaded', function() {
       }).then(result => {
         if (result.dismiss === Swal.DismissReason.timer) {
           console.log('Closed game');
-          window.location = gameUrl;
+          Swal.fire({
+            title: 'Thành công!',
+            icon: 'success',
+            showConfirmButton: false,
+            timer: 1500,
+            timerProgressBar: true
+          }).then(() => {
+            window.location = gameUrl;
+          });
         }
       });
     });

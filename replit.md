@@ -35,7 +35,10 @@ This runs on port 5000.
 
 ## Recent Changes
 - Fixed UTF-8 encoding issues with Vietnamese game names ("Tài Xỉu")
-- Added SweetAlert2 loading dialog for game selection with 4-second loading timer
+- Added SweetAlert2 loading dialog for game selection:
+  - Shows "Load 4000 Data" with countdown timer (4000ms → 0)
+  - After countdown completes, displays "Thành công!" success message
+  - Then automatically navigates to game page
 
 ## Deployment
 Static file deployment - no build step needed. The `server.py` provides a simple HTTP server with no-cache headers for development.
