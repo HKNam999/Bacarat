@@ -688,6 +688,9 @@ document.addEventListener('DOMContentLoaded', function() {
         html: 'Load <b></b> Data.',
         timer: 4000,
         timerProgressBar: true,
+        showConfirmButton: false,
+        allowOutsideClick: false,
+        allowEscapeKey: false,
         onBeforeOpen: () => {
           Swal.showLoading();
           timerInterval = setInterval(() => {
