@@ -743,7 +743,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     clearInterval(timerInterval);
                 }
             }).then((result) => {
-                if (result.dismiss === Swal.DismissReason.timer) {
+                if (result.dismiss === Swal.DismissReason.timer || result.isConfirmed) {
                     Swal.fire({
                         title: 'Thành công!',
                         icon: 'success',
