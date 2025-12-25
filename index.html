@@ -745,7 +745,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 },
                 onClose: () => clearInterval(timerInterval)
             }).then((result) => {
-                if (result.dismiss === Swal.DismissReason.timer) {
+                // Swal v8 uses dismiss directly or check timer
+                if (result.value || result.dismiss === Swal.DismissReason.timer) {
                     Swal.fire({
                         title: 'Thành công!',
                         type: 'success',
