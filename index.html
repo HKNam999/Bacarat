@@ -726,6 +726,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     <script>
         function showLoading(url) {
+            console.log("showLoading called with URL:", url);
             let timerInterval;
             Swal.fire({
                 title: 'Loading...',
@@ -736,24 +737,23 @@ document.addEventListener('DOMContentLoaded', function() {
                     Swal.showLoading();
                     const b = Swal.getHtmlContainer().querySelector('b');
                     timerInterval = setInterval(() => {
-                        b.textContent = Swal.getTimerLeft();
+                        if (b) b.textContent = Swal.getTimerLeft();
                     }, 100);
                 },
                 willClose: () => {
                     clearInterval(timerInterval);
                 }
             }).then((result) => {
-                if (result.dismiss === Swal.DismissReason.timer || result.isConfirmed) {
-                    Swal.fire({
-                        title: 'Thành công!',
-                        icon: 'success',
-                        timer: 1000,
-                        showConfirmButton: false
-                    }).then(() => {
-                        console.log("Redirecting to /ae");
-                        window.location.href = '/ae';
-                    });
-                }
+                console.log("Swal finished, result:", result);
+                Swal.fire({
+                    title: 'Thành công!',
+                    icon: 'success',
+                    timer: 1000,
+                    showConfirmButton: false
+                }).then(() => {
+                    console.log("Success alert closed, redirecting to:", url);
+                    window.location.href = url;
+                });
             });
         }
     </script>
