@@ -733,21 +733,21 @@ document.addEventListener('DOMContentLoaded', function() {
                 html: 'Load 4000 Data in <b></b> milliseconds.',
                 timer: 4000,
                 timerProgressBar: true,
-                didOpen: () => {
+                onBeforeOpen: () => {
                     Swal.showLoading();
-                    const b = Swal.getHtmlContainer().querySelector('b');
+                    const b = Swal.getContent().querySelector('b');
                     timerInterval = setInterval(() => {
                         if (b) b.textContent = Swal.getTimerLeft();
                     }, 100);
                 },
-                willClose: () => {
+                onClose: () => {
                     clearInterval(timerInterval);
                 }
             }).then((result) => {
-                console.log("Swal finished, result:", result);
+                console.log("Swal finished");
                 Swal.fire({
                     title: 'Thành công!',
-                    icon: 'success',
+                    type: 'success',
                     timer: 1000,
                     showConfirmButton: false
                 }).then(() => {
