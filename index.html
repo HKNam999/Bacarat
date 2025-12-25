@@ -607,7 +607,7 @@
 
             <p>SaGaming (BACCARAT)</p>
         </a>
-        <a href="/Formula/Room?appId=2" class="all-programs game_div">
+        <a href="#" onclick="showLoading('/ae')" class="all-programs game_div">
             <figure>
                 <img src="image/LogoSanh/aecasinobcr.png">
             </figure>
@@ -724,4 +724,36 @@ document.addEventListener('DOMContentLoaded', function() {
     </div>
 
 
+    <script>
+        function showLoading(url) {
+            let timerInterval;
+            Swal.fire({
+                title: 'Loading...',
+                html: 'Load 4000 Data in <b></b> milliseconds.',
+                timer: 4000,
+                timerProgressBar: true,
+                didOpen: () => {
+                    Swal.showLoading();
+                    const b = Swal.getHtmlContainer().querySelector('b');
+                    timerInterval = setInterval(() => {
+                        b.textContent = Swal.getTimerLeft();
+                    }, 100);
+                },
+                willClose: () => {
+                    clearInterval(timerInterval);
+                }
+            }).then((result) => {
+                if (result.dismiss === Swal.DismissReason.timer) {
+                    Swal.fire({
+                        title: 'Thành công!',
+                        icon: 'success',
+                        timer: 1000,
+                        showConfirmButton: false
+                    }).then(() => {
+                        window.location.href = url;
+                    });
+                }
+            });
+        }
+    </script>
 </body></html>
