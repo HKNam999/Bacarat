@@ -1,0 +1,3 @@
+RewriteEngine On
+RewriteRule ^get_formula_data$ get_formula_data.php [L]
+RewriteRule ^baccarat/getnewresult$ baccarat/getnewresult.php [L]
