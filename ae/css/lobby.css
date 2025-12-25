@@ -1,0 +1,443 @@
+body {
+    background-image: url(/images/baccarat_bg.png)
+}
+.sidenav {
+    background-image: none
+}
+.showtext {
+    font-family: arial, san-serif;
+    font-size: 20px
+}
+.chancetxt {
+    font-family: arial, san-serif;
+    margin-bottom: -5px;
+    font-size: 8px;
+    color: #fff
+}
+.txtroom {
+    font-family: arial, san-serif;
+    font-size: 10px;
+    bottom: 1;
+}
+.resroom {
+    height: 40px
+}
+@media(min-width:750px) {
+    .showtext {
+        line-height: 2;
+        font-size: 30px
+    }
+    .chancetxt {
+        margin-bottom: -35px;
+        font-size: 25px
+    }
+    .txtroom {
+        font-size: 27px
+    }
+    .resroom {
+        height: 100px
+    }
+}
+@media(min-width:1200px) {
+    .resroom {
+        height: 120px
+    }
+    .txtroom {
+        font-size: 20px
+    }
+    .chancetxt {
+        margin-bottom: -25px;
+        font-size: 27px
+    }
+}
+@media(min-width:992px) {
+    .sidenav {}
+}
+.activefor {
+    background-repeat: no-repeat;
+    background-size: 130px 35px;
+    background-position: center
+}
+.activefortxt {
+    color: khaki
+}
+.home_btn {
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 120%;
+    letter-spacing: 2px;
+    background-color: #000;
+    margin-top: 10px
+}
+@media(min-width:992px) {
+    .home_btn {
+        font-size: 100%;
+        margin-left: 3em
+    }
+}
+@media(max-width:767px) {
+    .formula-div {
+        display: none
+    }
+}
+.formula-selector {
+    display: none;
+}
+
+@media (max-width: 767px) {
+    .formula-selector {
+        display: block;
+    }
+}
+
+@font-face {
+    font-family: arial, san-serif;
+    src: url(/fonts/Others/Helvethaica_Med.ttf)
+}
+@font-face {
+    font-family: arial, san-serif;
+    src: url(/fonts/Others/Helvethaica_Bd.ttf);
+    font-weight: 700
+}
+@font-face {
+    font-family: rsu;
+    src: url(/fonts/Others/RSU_LIGHT.ttf)
+}
+@font-face {
+    font-family: rsu;
+    src: url(/fonts/Others/RSU_BOLD.ttf);
+    font-weight: 700
+}
+body {
+    background-color: #ccc;
+    background-size: cover;
+    background-attachment: fixed;
+    font-family: rsu
+}
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, .9);
+    color: #fff;
+    text-align: center
+}
+a:link {
+    color: #fff;
+    text-decoration: none
+}
+a:visited {
+    color: #fff;
+    text-decoration: none
+}
+a:hover {
+    color: #fff;
+    text-decoration: none
+}
+a:active {
+    color: #fff;
+    text-decoration: none
+}
+::-webkit-scrollbar {
+    width: 5px;
+    height: 5px
+}
+::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, .2)
+}
+::-webkit-scrollbar-thumb {
+    background: #888
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #555
+}
+#overlay {
+    position: fixed;
+    display: none;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, .5);
+    z-index: 2;
+    cursor: pointer
+}
+#overlay-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-size: 50px;
+    color: #fff;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%)
+}
+.border-win {
+    width: 45px;
+    margin-left: auto;
+    margin-right: auto;
+    border: 2px solid #28a745;
+    border-radius: 9px
+}
+.border-lose {
+    width: 45px;
+    margin-left: auto;
+    margin-right: auto;
+    border: 2px solid #dc3545;
+    border-radius: 9px
+}
+.frameA {
+    padding: 3px 1% 0;
+    background-repeat: no-repeat, no-repeat;
+    background-size: 100% 57px, 100% 100%;
+    background-origin: content-box, padding-box
+}
+.frameB {
+    padding: 3px 1.2% 0;
+    background-repeat: no-repeat, no-repeat;
+    background-size: 100% 57px, 100% 100%;
+    height: 470px;
+    margin-bottom: 11px;
+    background-origin: content-box, padding-box
+}
+.modal-content {
+    background-color: rgba(0, 0, 0, .9);
+    border: 3px solid green
+}
+
+
+/* UPDATED ROOM CARD UI */
+.room-card{
+    display: flex;
+    width: 500px;
+    /* min-width: 410px; */
+    /* max-width: 500px; */
+    height: 270px;
+    background-image: url("../images/lobby-bg.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 20px 30px;
+    border-radius: 10px;
+    gap: 30px;
+    text-transform: uppercase;
+}
+
+@media screen and (max-width: 1024px) and (min-width: 769px) {
+    .room-card{
+        width: 410px;
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    .room{
+        width: 45%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .room{
+        width: 100%;
+    }
+    .room-card{
+        width: 100%;
+        margin: auto;
+    }
+}
+
+.room-card p {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.left-side, .right-side{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+}
+
+.room-card .left-side img{
+    width: 150px;
+    height: 50px;
+}
+
+.room-name{
+    font-size: 22px;
+    font-weight: bolder;
+    color: white;
+    text-transform: uppercase;
+}
+
+.card-btn{
+    width: 100%;
+    height: 40px;
+    background-color: orange;
+    font-size: 28px;
+    font-weight: bolder;
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
+.bordered-box{
+    border: 2px solid orange;
+    border-radius: 10px;
+    width: 100%;
+}
+.info-box{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    color: white;
+}
+.winrate-area{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.winrate-area .heading{
+    background-color: black;
+    width: 100%;
+    border-radius: 10px 10px 0 0;
+    padding: 10px 0;
+    color: white;
+    text-align: center;
+    font-size: 22px;
+    font-weight: bolder;
+    justify-content: center;
+}
+
+.winrate-area .winrate-info{
+    color: orange;
+    font-size: 28px;
+    font-weight: bolder;
+}
+@font-face {
+    font-family: "Articulat CF";
+    src: url('/fonts/Articulat/ArticulatCF-Regular.otf');
+    font-family: "Google Sans";
+    src: url('/fonts/Google_Sans/ProductSans-Regular.ttf');
+}
+
+.formula-div{
+    background-image: url('/images/side_bar.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 15%;
+}
+
+.formula-div ul{
+    list-style: none;
+    padding: 0;
+}
+.formula_btn{
+    background-image: url('/images/button.png');
+    background-repeat: no-repeat;
+    background-size: 130px 35px;
+    background-position: center;
+}
+.table_box {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    /*width: 375px;*/
+    background: #000;
+    border: 1px solid transparent;
+    border-image: linear-gradient(1deg, #D0A651 0%, #3C2904 26%, #B27A1F 49%, #EBE0A9 62%, #CBAD55 100%);
+    border-image-slice: 1;
+    cursor: pointer;
+    margin: 5px;
+}
+.table_box .table_con {
+    width: 100%;
+    /*width: calc(100% - 121px);*/
+}
+.table_box .photo img {
+    width: 120px;
+    height: 144px;
+}
+.table_box .photo img.dealer-flag {
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    top: 4px;
+    left: 4px;
+}
+.table_box .photo p {
+    width: 100%;
+    height: 35px;
+    line-height: 35px;
+    background: #000;
+    color: #BFBFBF;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+}
+.table_box .table_con dl {
+    color: #fff;
+    background: #1f1f1f;
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+}
+.table_box .table_con dl dt{
+    font-size: 14px;
+    line-height: 37px;
+    text-indent: 10px;
+    flex: 1;
+    padding-right: 5px;
+    text-align: left;
+}
+.table_box .table_con .road_play {
+    background-image: linear-gradient(-1deg, #313131 0%, #000000 100%);
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+    padding: 0;
+}
+.table_box .table_con .road_play li {
+    color: #fff;
+    line-height: 36px;
+    /*flex: 1;*/
+    list-style: none;
+}
+.table_box .table_con .road_play span {
+    background: #B80909;
+    width: 10px;
+    height: 10px;
+    border-radius: 5px;
+    text-indent: -9999px;
+    margin: 13px 5px 0 5px;
+    float: left;
+}
+.table_box .road_play p {
+    font-size: 13px;
+    margin-right: 3px;
+    float: left;
+    display: block;
+}
+.table_box .table_con .road_play span:nth-child(3n) {
+    background: #216BB0;
+}
+.table_box .table_con .road_play span:nth-child(5n) {
+    background: #80B632;
+}
+.table_box .road_play li:last-child {
+    width: 70px;
+    font-size: 13px;
+}
+.table_box .table_con .road_play a {
+    display: block;
+    height: 36px;
+    text-align: center;
+    color: #000;
+    font-weight: bold;
+    background-image: linear-gradient(0deg, #F39100 0%, #FFC300 100%);
+}
+
