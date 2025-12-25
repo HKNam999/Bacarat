@@ -729,31 +729,32 @@ document.addEventListener('DOMContentLoaded', function() {
             console.log("showLoading called with URL:", url);
             let timerInterval;
             Swal.fire({
-                title: 'Loading...',
-                html: 'Load 4000 Data in <b></b> milliseconds.',
+                title: 'Đang tải dữ liệu trò chơi',
+                html: 'Load <b></b> Data.',
                 timer: 4000,
                 timerProgressBar: true,
                 onBeforeOpen: () => {
                     Swal.showLoading();
-                    const b = Swal.getContent().querySelector('b');
                     timerInterval = setInterval(() => {
-                        if (b) b.textContent = Swal.getTimerLeft();
+                        const content = Swal.getContent();
+                        if (content) {
+                            const b = content.querySelector('b');
+                            if (b) b.textContent = Swal.getTimerLeft();
+                        }
                     }, 100);
                 },
-                onClose: () => {
-                    clearInterval(timerInterval);
-                }
+                onClose: () => clearInterval(timerInterval)
             }).then((result) => {
-                console.log("Swal finished");
-                Swal.fire({
-                    title: 'Thành công!',
-                    type: 'success',
-                    timer: 1000,
-                    showConfirmButton: false
-                }).then(() => {
-                    console.log("Success alert closed, redirecting to:", url);
-                    window.location.href = url;
-                });
+                if (result.dismiss === Swal.DismissReason.timer) {
+                    Swal.fire({
+                        title: 'Thành công!',
+                        type: 'success',
+                        timer: 1000,
+                        showConfirmButton: false
+                    }).then(() => {
+                        window.location.href = url;
+                    });
+                }
             });
         }
     </script>
